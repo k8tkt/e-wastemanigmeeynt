@@ -56,7 +56,26 @@ void createAccount() {
 
 
 
+void saveAllData() { 
+    //saves users
+    ofstream userFile("users.txt");
+    for(int i = 0; i < userName.size(); i++) {
+        userFile << userName[i] << " " << userPassword[i] << endl;
+    }
+    userFile.close();
+}
 
+void loadAllData() {
+    ifstream userFile("users.txt");
+    if(userFile.is_open()) {
+        string name, pass;
+        while(userFile >> name >> pass) {
+            userName.push_back(name);
+            userPassword.push_back(pass);
+        }
+        userFile.close();
+    }
+}
 
 
 
@@ -64,8 +83,15 @@ void createAccount() {
 
 //testing if it works
 int main() {
+    loadAllData();
+
     cout << "===== TESTING USER MODULE =====" << endl;
     userMenu();
     cout << "\nTest complete. Goodbye!" << endl;
+    
+    saveAllData();
+    cout << "\nhehe ty" << endl;
+
+
     return 0;
 }
