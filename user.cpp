@@ -1,6 +1,12 @@
 #include "globals.h"
 #include "functions.h"
 
+//utility
+void logActivity(string message) {
+    activityLog.push_back(message);
+}
+
+//user menu
 void userMenu() {
     int choice;
     while (true) {
@@ -16,4 +22,12 @@ void userMenu() {
         else if (choice == 3) return;  // exits back to main menu
         else cout << "Invalid choice. Try again." << endl;
     }
+}
+
+//testing if it works
+int main() {
+    cout << "===== TESTING USER MODULE =====" << endl;
+    userMenu();
+    cout << "\nTest complete. Goodbye!" << endl;
+    return 0;
 }
