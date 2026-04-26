@@ -18,11 +18,49 @@ void userMenu() {
         cin >> choice;
 
         if      (choice == 1) createAccount();
-        else if (choice == 2) userLogin();
         else if (choice == 3) return;  // exits back to main menu
         else cout << "Invalid choice. Try again." << endl;
     }
 }
+
+//account creation func
+void createAccount() {
+    string newUsername, newPassword;
+
+    cout << "\nEnter username: ";
+    cin >> newUsername;
+    cout << "Enter password: ";
+    cin >> newPassword;
+
+    //checks if fields are empty
+    if (newUsername == "" || newPassword == "") {
+        cout << "Fields cannot be empty" << endl;
+        return;
+    }
+
+    //checks if username is already taken
+    for (int i = 0; i < userName.size(); i++) {
+        if (userName[i] == newUsername) {
+            cout << "Username already exists. Try a different one" << endl;
+            return;
+        }
+    }
+
+    //Saves the new account
+    userName.push_back(newUsername);
+    userPassword.push_back(newPassword);
+
+    logActivity("New account created: " + newUsername);
+    cout << "Account created successfully! You can now log in." << endl;
+}
+
+
+
+
+
+
+
+
 
 //testing if it works
 int main() {

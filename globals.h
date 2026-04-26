@@ -21,14 +21,14 @@ extern vector<string> productAssignedTo;
 extern vector<string> productStatus;
 
 // USERS
-extern vector<string> userName;
-extern vector<string> userPassword;
+vector<string> userName;
+vector<string> userPassword;
 
 // EMPLOYEES
 extern vector<string> employeeID;
 extern vector<string> employeeName;
 
 // ACTIVITY LOG
-extern vector<string> activityLog;
+vector<string> activityLog;
 
 #endif
