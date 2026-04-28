@@ -38,7 +38,6 @@ void updateToRecycled(string currentEmpID);
 void searchAssignedProducts(string currentEmpID);
 void viewTaskSummary(string currentEmpID);
 
-
 // FILE SAVING
 void saveAllData();
 void loadAllData();
